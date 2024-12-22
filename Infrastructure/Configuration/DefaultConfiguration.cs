@@ -1,3 +1,6 @@
+using Application.Products;
+using Core.Interfaces;
+
 namespace Infrastructure.Configuration;
 
 public static class DefaultConfiguration
@@ -9,6 +12,8 @@ public static class DefaultConfiguration
 
         services.Configure<RestApiSettings>(configuration!.GetSection(nameof(RestApiSettings)));
         services.Configure<HttpClientSettings>(configuration.GetSection(nameof(HttpClientSettings)));
+
+        services.AddSingleton<IProductsService, ProductsService>();
         
         return services;
     }

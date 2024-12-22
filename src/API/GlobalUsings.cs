@@ -4,6 +4,7 @@ global using API;
 global using Application;
 global using Autofac;
 global using Autofac.Extensions.DependencyInjection;
+global using Core.Interfaces;
 global using Infrastructure;
 global using Infrastructure.Configuration;
 global using Serilog;

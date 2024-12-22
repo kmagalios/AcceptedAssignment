@@ -1,5 +1,6 @@
 // Global using directives
 
+global using System.Text.Json;
 global using Autofac;
 global using Core.Dtos;
 global using Core.Interfaces;

@@ -13,6 +13,13 @@ builder.Services.AddHttpConfiguration();
 builder.Services.AddProblemDetails();
 builder.Services.AddApiVersioning();
 
+builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder =>
+{
+    containerBuilder.RegisterModule(new DefaultApiModule());
+    containerBuilder.RegisterModule(new DefaultApplicationModule());
+    containerBuilder.RegisterModule(new DefaultInfrastructureModule());
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

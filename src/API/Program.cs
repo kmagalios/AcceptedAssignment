@@ -28,7 +28,7 @@ versionedEndpointRouteBuilder.MapGet("api/v{version:apiVersion}/getproducts", as
         var products = await productsService.GetProducts();
         return products;
     })
-    .WithName("GetWeatherForecast")
+    .WithName("GetProducts")
     .HasApiVersion(1.0);
 
 app.Run();
